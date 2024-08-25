@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Finder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            /* background-image:url(v915-techi-051-k.jpg); */
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+        }
+        select {
+            padding: 10px;
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 20px;
+        }
+        .community-list {
+            list-style: none;
+            padding: 0;
+            display: none; /* Hide initially */
+        }
+        .community-list li {
+            background-color: white;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .community-list li a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: #bc581a;
+            font-weight: bold;
+        }
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #bc581a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .back-button:hover {
+            background-color: #a04a18;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Find Communities Based on Location</h1>
+
+    <label for="state">Select State:</label>
+    <select id="state" name="state" onchange="updateDistricts()">
+        <option value="">-- Select State --</option>
+        <option value="state1">State 1</option>
+        <option value="state2">State 2</option>
+        <option value="state3">State 3</option>
+    </select>
+
+    <label for="district">Select District:</label>
+    <select id="district" name="district" onchange="showCommunities()">
+        <option value="">-- Select District --</option>
+    </select>
+
+    <h2>Communities</h2>
+    <ul id="communityList" class="community-list">
+        <li>
+            <strong>Community Name 1</strong><br>
+            <a href="https://www.instagram.com/community1" target="_blank">Instagram</a>
+            <a href="https://chat.whatsapp.com/community1" target="_blank">WhatsApp</a>
+        </li>
+        <li>
+            <strong>Community Name 2</strong><br>
+            <a href="https://www.instagram.com/community2" target="_blank">Instagram</a>
+            <a href="https://chat.whatsapp.com/community2" target="_blank">WhatsApp</a>
+        </li>
+        <li>
+            <strong>Community Name 3</strong><br>
+            <a href="https://www.instagram.com/community3" target="_blank">Instagram</a>
+            <a href="https://chat.whatsapp.com/community3" target="_blank">WhatsApp</a>
+        </li>
+    </ul>
+
+    <!-- Back Button -->
+    <a href="javascript:history.back()" class="back-button">Go Back</a>
+
+    <script>
+        function updateDistricts() {
+            const state = document.getElementById('state').value;
+            const districtSelect = document.getElementById('district');
+            districtSelect.innerHTML = '<option value="">-- Select District --</option>'; // Reset district dropdown
+
+            if (state) {
+                // Example of how you might populate districts based on the selected state
+                const districts = {
+                    'state1': ['District 1A', 'District 1B', 'District 1C'],
+                    'state2': ['District 2A', 'District 2B'],
+                    'state3': ['District 3A', 'District 3B', 'District 3C', 'District 3D']
+                };
+
+                districts[state].forEach(function(district) {
+                    const option = document.createElement('option');
+                    option.value = district.toLowerCase().replace(/\s+/g, '');
+                    option.textContent = district;
+                    districtSelect.appendChild(option);
+                });
+            }
+        }
+
+        function showCommunities() {
+            const state = document.getElementById('state').value;
+            const district = document.getElementById('district').value;
+            const communityList = document.getElementById('communityList');
+
+            if (state && district) {
+                communityList.style.display = 'block';
+            } else {
+                communityList.style.display = 'none';
+            }
+        }
+    </script>
+
+</body>
+</html>

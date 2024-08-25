@@ -1,0 +1,330 @@
+ 
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Project Ideas</title>
+     <style>
+         * {
+             margin: 0;
+             box-sizing: border-box;
+         }
+         body {
+             font-family: Arial, sans-serif;
+             display: flex;
+             min-height: 100vh;
+             background-color: #f0f0f0;
+             background: url(vecteezy_white-and-orange-modern-background_11171103.jpg);
+         }
+         .body{
+             height: 100%;
+             width: 100%;
+             /* background-color: #fff; */
+             object-fit: cover;
+           
+ 
+         }
+         .sidebar {
+             width: 250px;
+             /* background-color: #6a1b9a;  */
+             color: #fff;
+             background-color: #bc581a;
+             padding: 20px;
+             height: 100vh;
+             position: fixed;
+             top: 0;
+             left: 0;
+             overflow-y: auto;
+         }
+         .sidebar h2 {
+             font-size: 34px;
+             margin-bottom: 20px;
+             text-decoration: underline;
+         }
+         .sidebar a {
+             display: block;
+             color: #fff;
+             text-decoration: none;
+             padding: 10px;
+             margin: 5px 0;
+             border-radius: 5px;
+             transition: 0.3s;
+         }
+         .sidebar a:hover {
+             background-color: #fff; 
+             color: black;
+             /* background-color:peachpuff; */
+         }
+         .main-content {
+             margin-left: 250px;
+             padding: 20px;
+             width: calc(100% - 250px);
+             overflow-y: auto; /* Enables scrolling */
+         }
+         .main-content h1{
+             font-size: 34px;
+             margin-bottom: 10px;
+         }
+         .project-boxes {
+             display: flex;
+             flex-wrap: wrap;
+             gap: 20px;
+         }
+         .project-box {
+             background-color: #ffffff;
+             border: 1px solid #ddd;
+             border-radius: 8px;
+             padding: 20px;
+             width: 250px;
+             text-align: center;
+             cursor: pointer;
+             transition: box-shadow 0.3s, background-color 0.3s;
+         }
+         .project-box:hover {
+             box-shadow: 0 4px 8px rgba(237, 155, 77, 0.2);
+             background-color: #f3e5f5; /* Light purple background on hover */
+         }
+         .project-box h3 {
+             margin: 0 0 10px 0;
+             color: #bc581a; /* Purple color */
+         }
+ 
+         /* Project Details Slide-In */
+         .project-details {
+             position: fixed;
+             right: -50%;
+             top: 0;
+             width: 50%;
+             height: 100%;
+             background-color: white;
+             box-shadow: -5px 0 15px rgba(237, 155, 77, 0.2);
+             transition: right 0.5s ease;
+             display: flex;
+             flex-direction: column;
+             overflow-y: auto;
+             z-index: 10;
+         }
+         .project-details.show {
+             right: 0;
+         }
+         .project-content {
+             padding: 20px;
+             position: relative;
+         }
+     
+         .back-button {
+             position: absolute;
+             left: +531px; /* Aligns with the left boundary outside the project-details */
+             top: 20px;
+             background-color: #bc581a;
+             color: white;
+             padding: 10px 15px;
+             border-radius: 5px;
+             cursor: pointer;
+             transition: background-color 0.3s, transform 0.5s ease;
+             z-index: 100; /* Ensures visibility */
+             visibility: visible;
+             opacity: 1;
+         }
+         .back-button:hover {
+             background-color: #bc581a;
+         }
+         .project-content img {
+             width: 100%;
+             border-radius: 8px;
+         }
+         .student-info {
+             display: flex;
+             align-items: center;
+             margin-top: 10px;
+         }
+         .student-info img {
+             width: 40px;
+             height: 40px;
+             border-radius: 50%;
+             margin-right: 10px;
+         }
+         .student-info span {
+             margin-right: 15px;
+             color: #555;
+         }
+         .project-description h3 {
+             margin-top: 20px;
+             font-size: 18px;
+             color: black;
+         }
+         .project-description p {
+             font-size: 16px;
+             color: black;
+         }
+         .buttons {
+             display: flex;
+             justify-content: space-between;
+             margin-top: 20px;
+         }
+         .view-details, .collaborate {
+             background-color: #bc581a;
+             color: white;
+             padding: 10px 20px;
+             border: none;
+             border-radius: 5px;
+             cursor: pointer;
+             width: 40%;
+         }
+         .view-details:hover, .collaborate:hover {
+             background-color: #bc581a;
+         }
+     </style>
+ </head>
+ <body class="body">
+     <div class="sidebar">
+         <h2>Navigation</h2>
+         <a href="ai model.html">AI Model</a>
+         <hr>
+         <a href="Feedback.html">Feedback</a>
+         <hr>
+         <a href="communities  page.html">Communities</a>
+         <hr>
+         <a href="newprojectpage.html">Add Projects</a>
+         <hr>
+         <a href="/contact">Contacts</a>
+         <hr>
+     </div>
+     <div class="main-content">
+         <h1 style="color:#bc581a"> <b>Project Ideas</b> </h1>
+         <div class="project-boxes">
+             <div class="project-box" onclick="showProject(1)">
+                 <img src="1.jpeg" alt="AI Driven Project">
+                 <h3>Project 1: AI Driven Project</h3>
+                 <p>This project tells us about... </p>
+             </div>
+             <div class="project-box" onclick="showProject(2)">
+                 <img src="2.jpeg" alt="Student Showcase">
+                 <h3>Project 2: Student Showcase</h3>
+                 <p>Creative Work of students... </p>
+             </div>
+             <div class="project-box" onclick="showProject(3)">
+                 <img src="3.jpeg" alt="Real-Time Collaboration">
+                 <h3>Project 3: Real-Time Collaboration</h3>
+                 <p>Work Together to build projects... </p>
+             </div>
+             <div class="project-box" onclick="showProject(4)">
+                 <img src="1.jpeg" alt="Featured Projects">
+                 <h3>Project 4: Featured Projects</h3>
+                 <p>Student work display... </p>
+             </div>
+             <div class="project-box" onclick="showProject(5)">
+                 <img src="2.jpeg" alt="Educational Tools">
+                 <h3>Project 5: Educational Tools</h3>
+                 <p>Click to gain access to educational tools... </p>
+             </div>
+             <div class="project-box" onclick="showProject(6)">
+                 <img src="3.jpeg" alt="6">
+                 <h3>Project 6: Project 6</h3>
+                 <p>Student work display... </p>
+             </div>
+             <div class="project-box" onclick="showProject(7)">
+                 <img src="1.jpeg" alt="7">
+                 <h3>Project 7: Project 7</h3>
+                 <p>Student work display... </p>
+             </div>
+             <div class="project-box" onclick="showProject(8)">
+                 <img src="2.jpeg" alt="8">
+                 <h3>Project 8: Project 8</h3>
+                 <p>Student work display... </p>
+             </div>
+         </div>
+     </div>
+ 
+     <!-- Hidden Project Details Section -->
+     <div id="projectDetails" class="project-details">
+         <button id="backButton" class="back-button">Back</button>
+         <div class="project-content">
+             <img id="projectImage" src="a.jpg" alt="Project Image">
+             <h2 id="projectTitle">Featured Project</h2>
+             <div class="student-info">
+                 <img src="5.jpeg" alt="Student">
+                 <span>Student</span>
+                 <span class="time">43 minutes ago</span>
+                 <span class="rating">⭐ 4.7 out of 5 rating</span>
+             </div>
+             <div class="project-description">
+                 <h3>Project Details</h3>
+                 <p id="projectDescription">This project showcases innovative solutions and creative ideas developed by students to inspire and drive change.</p>
+             </div>
+             <div class="buttons">
+                 <button class="view-details">View details</button>
+                 <button class="collaborate">Collaborate now</button>
+             </div>
+         </div>
+     </div>
+ 
+     <script>
+         function showProject(projectId) {
+             const projectDetails = document.getElementById('projectDetails');
+             const projectImage = document.getElementById('projectImage');
+             const projectTitle = document.getElementById('projectTitle');
+             const projectDescription = document.getElementById('projectDescription');
+ 
+             switch (projectId) {
+                 case 1:
+                     projectImage.src = "5.jpeg";
+                     projectTitle.textContent = "Project 1: AI Driven Project";
+                     projectDescription.textContent = "This project focuses on utilizing artificial intelligence to solve complex problems and automate processes.";
+                     break;
+                 case 2:
+                     projectImage.src = "5.jpeg";
+                     projectTitle.textContent = "Project 2: Student Showcase";
+                     projectDescription.textContent = "A showcase of creative work developed by students, highlighting their talent and skills.";
+                     break;
+                 case 3:
+                     projectImage.src = "5.jpeg";
+                     projectTitle.textContent = "Project 3: Real-Time Collaboration";
+                     projectDescription.textContent = "A platform enabling real-time collaboration among team members, improving productivity and teamwork.";
+                     break;
+                 case 4:
+                     projectImage.src = "1.jpeg";
+                     projectTitle.textContent = "Project 4: Featured Projects";
+                     projectDescription.textContent = "This project showcases innovative solutions and creative ideas developed by students to inspire and drive change.";
+                     break;
+                 case 5:
+                     projectImage.src = "2.jpeg";
+                     projectTitle.textContent = "Project 5: Educational Tools";
+                     projectDescription.textContent = "Click to gain access to educational tools...";
+                     break;
+                 case 6:
+                     projectImage.src = "3.jpeg";
+                     projectTitle.textContent = "Project 6: Student work display";
+                     projectDescription.textContent = "This project displays the innovative solutions and creative ideas developed by students.";
+                     break;
+                 case 7:
+                     projectImage.src = "1.jpeg";
+                     projectTitle.textContent = "Project 7: Student work display";
+                     projectDescription.textContent = "This project displays the innovative solutions and creative ideas developed by students.";
+                     break;
+                 case 8:
+                     projectImage.src = "2.jpeg";
+                     projectTitle.textContent = "Project 8: Student work display";
+                     projectDescription.textContent = "This project displays the innovative solutions and creative ideas developed by students.";
+                     break;
+                 default:
+                     projectImage.src = "5.jpeg";
+                     projectTitle.textContent = "Featured Project";
+                     projectDescription.textContent = "";
+             }
+ 
+             // Show project details panel
+             projectDetails.classList.add('show');
+         }
+ 
+         const backButton = document.getElementById('backButton');
+         backButton.addEventListener('click', function () {
+             const projectDetails = document.getElementById('projectDetails');
+             projectDetails.classList.remove('show');
+         });
+     </script>
+ </body>
+ </html>
+ 

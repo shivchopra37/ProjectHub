@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="a.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Additional CSS for the back icon */
+        .back-icon {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: #f0f0f0;
+            border-radius: 50%;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 1000; /* Ensure the icon is above other elements */
+        }
+
+        .back-icon i {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .back-icon:hover {
+            background-color: #ddd;
+        }
+        .logo_box{
+            width: 100px;
+            height: 100px;
+            background: url(logo.jpg);
+            margin-left: 400px;
+        }
+    </style>
+</head>
+<body class="body">
+    <header class="header">
+        <h1 style="color: #bc581a ; font-size: 45px; font-weight: bold;">Project Hub</h1>
+    </header>
+    <hr>
+    <div class="welcome_box">
+       <h1>Welcome Back!</h1>
+       <p class="message_logindetails">Please enter your details to login.</p>
+    </div>
+    <div class="user_details">
+        <p class="email">Enter your E-mail address</p>
+        <input type="text" id="email" placeholder="user@gmail.com" class="email_placeholder">
+        <p class="password">Password</p>
+        <input type="password" id="password" class="password_placeholder">
+        <form>
+            <p class="location">Enter your Location</p>
+            <select id="states" name="states">
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                <option value="Assam">Assam</option>
+                <option value="Bihar">Bihar</option>
+                <option value="Chhattisgarh">Chhattisgarh</option>
+                <option value="Goa">Goa</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Haryana">Haryana</option>
+                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                <option value="Jharkhand">Jharkhand</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Manipur">Manipur</option>
+                <option value="Meghalaya">Meghalaya</option>
+                <option value="Mizoram">Mizoram</option>
+                <option value="Nagaland">Nagaland</option>
+                <option value="Odisha">Odisha</option>
+                <option value="Punjab">Punjab</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Sikkim">Sikkim</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Tripura">Tripura</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="Uttarakhand">Uttarakhand</option>
+                <option value="West Bengal">West Bengal</option>
+                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                <option value="Chandigarh">Chandigarh</option>
+                <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+                <option value="Lakshadweep">Lakshadweep</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Puducherry">Puducherry</option>
+            </select>
+        </form>
+        <div class="rememberme_forgotpassword">
+            <div class="remember_box">
+                <input type="checkbox" id="remember_me_checkbox" class="remember_button">
+                <label for="remember_me_checkbox" id="remember_me">Remember me</label>
+            </div>
+            <a href="###">Forgot Password?</a>
+        </div>
+        <a href="project.html">
+            <div class="login_mainbox">
+                <div class="login_box"><b>Login</b></div>
+            </div>
+        </a>
+        <div class="register_new">
+            <p class="donthaveaccount">Don't have an account?</p>
+            <p class="Registerhere">Register here</p>
+        </div>
+        <div class="hyphen">
+            <hr style="width: 30%;height: 1px;" id="horizontalline1">
+            <p>Or</p>
+            <hr style="width: 30%;height: 1px;" id="horizontalline2">
+        </div>
+        <div class="account_connect">
+            <a href="https://accounts.google.com/ServiceLogin?service=mail"><div class="google"><i class="fa-brands fa-google"></i></div></a>
+            <a href="https://appleid.apple.com/sign-in"><div class="apple"><i class="fa-brands fa-apple"></i></div></a>
+            <a href="https://x.com/i/flow/login"> <div class="twitter"><i class="fa-brands fa-twitter"></i></div></a>
+        </div>
+    </div>
+    <hr>
+    <footer>
+        <div class="footer_logo_contact">
+            <div class="logo_box"></div>
+            <div class="contact_box">
+                <p class="margin"><b>Contact us</b></p>
+                <p class="margin">info@mail</p>
+                <p class="margin">+913037</p>
+                <p class="margin">icons</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Back icon -->
+    <div class="back-icon" onclick="goBack()">
+        <i class="fa-solid fa-arrow-left"></i>
+    </div>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

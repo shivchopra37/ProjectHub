@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project AI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #333;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .btn {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .ideas-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Hi!! Welcome to Project AI</h1>
+    <p>I can help you with project ideas!!</p>
+    <p>Which domain do you want to choose for project ideas?</p>
+    <button class="btn" onclick="getIdeas('Web Development')">Web Development</button>
+    <button class="btn" onclick="getIdeas('Machine Learning')">Machine Learning</button>
+    <button class="btn" onclick="getIdeas('Blockchain')">Blockchain</button>
+    <div class="ideas-container" id="ideas-container"></div>
+</div>
+
+<script>
+    function getIdeas(domain) {
+        fetch('/get_ideas', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ domain: domain })
+        })
+        .then(response => response.json())
+        .then(data => {
+            const ideasContainer = document.getElementById('ideas-container');
+            ideasContainer.innerHTML = '<h3>Project Ideas for ' + domain + ':</h3>';
+            data.ideas.forEach(idea => {
+                ideasContainer.innerHTML += '<p>' + idea + '</p>';
+            });
+            ideasContainer.innerHTML += `
+                <p>Do you want ideation on any specific idea?</p>
+                <button class="btn" onclick="getIdeation(true)">Yes</button>
+                <button class="btn" onclick="getIdeation(false)">No</button>
+            `;
+        });
+    }
+
+    function getIdeation(choice) {
+        if (choice) {
+            const specificIdea = prompt("Which idea do you want to discuss?");
+            fetch('/get_ideation', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ specific_idea: specificIdea })
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.response);
+            });
+        } else {
+            alert("No problem! Feel free to explore more ideas.");
+        }
+    }
+</script>
+
+</body>
+</html>

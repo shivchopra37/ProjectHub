@@ -1,0 +1,283 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Hub</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            padding-top: 60px;
+        }
+
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #6a1b9a;
+            color: #ffffff;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        header h3 {
+            font-size: 24px;
+        }
+
+        
+        .buttons_flex {
+            display: flex;
+            align-items: center;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ffffff;
+            color: #6a1b9a;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+            text-align: center;
+        }
+
+        .button:hover {
+            background-color: #6a1b9a;
+            color: #ffffff;
+        }
+
+        
+        main {
+            padding: 20px;
+        }
+
+        .table-container {
+            width: 100%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .table-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+
+        .icon-column {
+            text-align: center;
+        }
+
+        tbody tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .score {
+            display: inline-block;
+            background-color: #e0e0e0;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+            color: #6f42c1;
+        }
+
+        .score::after {
+            content: "";
+            display: inline-block;
+            margin-left: 8px;
+            border-radius: 50%;
+            background-color: #6f42c1;
+            width: 12px;
+            height: 12px;
+        }
+        footer {
+    background-color: #6a1b9a; /* Purple background color */
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+footer .button1 {
+    display: inline-block;
+}
+
+footer .button1 a {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    background-color: #ffffff; /* White background color */
+    color: #6a1b9a; /* Purple text color */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+footer .button1 a:hover {
+    background-color: #4a2c85; /* Darker purple on hover */
+    color: #ffffff; /* White text on hover */
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h3>Project Hub</h3>
+        <div class="buttons_flex">
+            <div class="buttons">
+                <a href="C:\Users\user21\Desktop\HTML Tutorials\main.html" class="button">Login</a>
+                <a href="C:\Users\user21\Desktop\HTML Tutorials\main.html" class="button">Projects</a>
+                <a href="\chat.com" class="button">Chats</a>
+                <a href="C:\Users\user21\Desktop\HTML Tutorials\Index.html" class="button">Logout</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="table-container">
+            <h2>Student Projects</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Project Title</th>
+                        <th>Feedback Score</th>
+                        <th>Submission</th>
+                        <th class="icon-column">👍</th>
+                        <th class="icon-column">⭐</th>
+                        <th class="icon-column">🎁</th>
+                        <th class="icon-column">👎</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Real-Time Collaboration: Enhancing Teamwork Skills</td>
+                        <td><span class="score">85</span></td>
+                        <td>10/01/2023</td>
+                        <td>72</td>
+                        <td>93</td>
+                        <td>21</td>
+                        <td>80</td>
+                    </tr>
+                    <tr>
+                        <td>Innovative AI Solutions for Smart Cities</td>
+                        <td><span class="score">68</span></td>
+                        <td>15/02/2023</td>
+                        <td>21</td>
+                        <td>74</td>
+                        <td>70</td>
+                        <td>72</td>
+                    </tr>
+                    <tr>
+                        <td>Augmented Reality Applications in Education</td>
+                        <td><span class="score">92</span></td>
+                        <td>22/04/2023</td>
+                        <td>45</td>
+                        <td>58</td>
+                        <td>65</td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td>Blockchain Technology for Secure Transactions</td>
+                        <td><span class="score">88</span></td>
+                        <td>01/05/2023</td>
+                        <td>22</td>
+                        <td>85</td>
+                        <td>28</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td>Environmental Sustainability Projects: Green Solutions</td>
+                        <td><span class="score">78</span></td>
+                        <td>17/10/2023</td>
+                        <td>59</td>
+                        <td>92</td>
+                        <td>59</td>
+                        <td>29</td>
+                    </tr>
+                    <tr>
+                        <td>Virtual Reality Experiences for Tourism Industry</td>
+                        <td><span class="score">94</span></td>
+                        <td>30/01/2024</td>
+                        <td>45</td>
+                        <td>92</td>
+                        <td>52</td>
+                        <td>29</td>
+                    </tr>
+                    <tr>
+                        <td>Data Visualization for Business Intelligence</td>
+                        <td><span class="score">96</span></td>
+                        <td>04/02/2024</td>
+                        <td>4</td>
+                        <td>96</td>
+                        <td>21</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>Smart Home Automation Systems for Comfort and Efficiency</td>
+                        <td><span class="score">90</span></td>
+                        <td>20/03/2024</td>
+                        <td>68</td>
+                        <td>82</td>
+                        <td>85</td>
+                        <td>21</td>
+                    </tr>
+                    <tr>
+                        <td>Innovative Mobile App Development for Social Impact</td>
+                        <td><span class="score">63</span></td>
+                        <td>20/04/2024</td>
+                        <td>68</td>
+                        <td>82</td>
+                        <td>85</td>
+                        <td>21</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer>
+        <div class="button1">
+        <a href="C:\Users\user21\Desktop\HTML Tutorials\New Project Ideas.html">ADD MORE PROJECTS +</a>
+        </div>
+    </footer>
+</body>
+</html>
